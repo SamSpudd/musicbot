@@ -6,9 +6,6 @@ const client = new Discord.Client();
 
 const queue = new Map();
 
-load_dotenv()
-token = os.getenv('DISCORD_TOKEN')
-
 client.once("ready", () => {
   console.log("Ready!");
 });
@@ -129,4 +126,4 @@ function play(guild, song) {
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
 }
 
-client.login(token);
+client.login(process.env.DISCORD_TOKEN);
